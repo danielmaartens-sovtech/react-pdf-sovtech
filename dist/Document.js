@@ -7,7 +7,7 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 
 var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
 
@@ -59,29 +59,29 @@ var _propTypes2 = require("./shared/propTypes");
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { (0, _defineProperty2.default)(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { (0, _defineProperty2["default"])(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 var Document =
 /*#__PURE__*/
 function (_PureComponent) {
-  (0, _inherits2.default)(Document, _PureComponent);
+  (0, _inherits2["default"])(Document, _PureComponent);
 
   function Document() {
     var _getPrototypeOf2;
 
     var _this;
 
-    (0, _classCallCheck2.default)(this, Document);
+    (0, _classCallCheck2["default"])(this, Document);
 
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
     }
 
-    _this = (0, _possibleConstructorReturn2.default)(this, (_getPrototypeOf2 = (0, _getPrototypeOf3.default)(Document)).call.apply(_getPrototypeOf2, [this].concat(args)));
-    (0, _defineProperty2.default)((0, _assertThisInitialized2.default)(_this), "state", {
+    _this = (0, _possibleConstructorReturn2["default"])(this, (_getPrototypeOf2 = (0, _getPrototypeOf3["default"])(Document)).call.apply(_getPrototypeOf2, [this].concat(args)));
+    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "state", {
       pdf: null
     });
-    (0, _defineProperty2.default)((0, _assertThisInitialized2.default)(_this), "viewer", {
+    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "viewer", {
       scrollPageIntoView: function scrollPageIntoView(_ref) {
         var pageNumber = _ref.pageNumber;
         // Handling jumping to internal links target
@@ -106,15 +106,15 @@ function (_PureComponent) {
         (0, _utils.warnOnDev)("Warning: An internal link leading to page ".concat(pageNumber, " was clicked, but neither <Document> was provided with onItemClick nor it was able to find the page within itself. Either provide onItemClick to <Document> and handle navigating by yourself or ensure that all pages are rendered within <Document>."));
       }
     });
-    (0, _defineProperty2.default)((0, _assertThisInitialized2.default)(_this), "linkService", new _LinkService.default());
-    (0, _defineProperty2.default)((0, _assertThisInitialized2.default)(_this), "loadDocument",
+    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "linkService", new _LinkService["default"]());
+    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "loadDocument",
     /*#__PURE__*/
-    (0, _asyncToGenerator2.default)(
+    (0, _asyncToGenerator2["default"])(
     /*#__PURE__*/
-    _regenerator.default.mark(function _callee() {
+    _regenerator["default"].mark(function _callee() {
       var source, _this$props, options, onLoadProgress, onPassword, cancellable, pdf;
 
-      return _regenerator.default.wrap(function _callee$(_context) {
+      return _regenerator["default"].wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
@@ -160,14 +160,14 @@ function (_PureComponent) {
               _context.prev = 15;
               // If another loading is in progress, let's cancel it
               (0, _utils.cancelRunningTask)(_this.runningTask);
-              _this.loadingTask = _pdfjsDist.default.getDocument(_objectSpread({}, source, {}, options));
+              _this.loadingTask = _pdfjsDist["default"].getDocument(_objectSpread({}, source, {}, options));
               _this.loadingTask.onPassword = onPassword;
 
               if (onLoadProgress) {
                 _this.loadingTask.onProgress = onLoadProgress;
               }
 
-              cancellable = (0, _makeCancellablePromise.default)(_this.loadingTask.promise);
+              cancellable = (0, _makeCancellablePromise["default"])(_this.loadingTask.promise);
               _this.runningTask = cancellable;
               _context.next = 24;
               return cancellable.promise;
@@ -201,10 +201,10 @@ function (_PureComponent) {
         }
       }, _callee, null, [[1, 8], [15, 28]]);
     })));
-    (0, _defineProperty2.default)((0, _assertThisInitialized2.default)(_this), "setupLinkService", function () {
+    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "setupLinkService", function () {
       _this.linkService.setViewer(_this.viewer);
 
-      var documentInstance = (0, _assertThisInitialized2.default)(_this);
+      var documentInstance = (0, _assertThisInitialized2["default"])(_this);
       Object.defineProperty(_this.linkService, 'externalLinkTarget', {
         get: function get() {
           var externalLinkTarget = documentInstance.props.externalLinkTarget;
@@ -228,16 +228,16 @@ function (_PureComponent) {
         }
       });
     });
-    (0, _defineProperty2.default)((0, _assertThisInitialized2.default)(_this), "onSourceSuccess", function () {
+    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "onSourceSuccess", function () {
       var onSourceSuccess = _this.props.onSourceSuccess;
       (0, _utils.callIfDefined)(onSourceSuccess);
     });
-    (0, _defineProperty2.default)((0, _assertThisInitialized2.default)(_this), "onSourceError", function (error) {
+    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "onSourceError", function (error) {
       (0, _utils.errorOnDev)(error);
       var onSourceError = _this.props.onSourceError;
       (0, _utils.callIfDefined)(onSourceError, error);
     });
-    (0, _defineProperty2.default)((0, _assertThisInitialized2.default)(_this), "onLoadSuccess", function () {
+    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "onLoadSuccess", function () {
       var onLoadSuccess = _this.props.onLoadSuccess;
       var pdf = _this.state.pdf;
       (0, _utils.callIfDefined)(onLoadSuccess, pdf);
@@ -245,7 +245,7 @@ function (_PureComponent) {
 
       _this.linkService.setDocument(pdf);
     });
-    (0, _defineProperty2.default)((0, _assertThisInitialized2.default)(_this), "onLoadError", function (error) {
+    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "onLoadError", function (error) {
       _this.setState({
         pdf: false
       });
@@ -254,14 +254,14 @@ function (_PureComponent) {
       var onLoadError = _this.props.onLoadError;
       (0, _utils.callIfDefined)(onLoadError, error);
     });
-    (0, _defineProperty2.default)((0, _assertThisInitialized2.default)(_this), "findDocumentSource",
+    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "findDocumentSource",
     /*#__PURE__*/
-    (0, _asyncToGenerator2.default)(
+    (0, _asyncToGenerator2["default"])(
     /*#__PURE__*/
-    _regenerator.default.mark(function _callee2() {
+    _regenerator["default"].mark(function _callee2() {
       var file, fileUint8Array, url, otherParams, _fileUint8Array;
 
-      return _regenerator.default.wrap(function _callee2$(_context2) {
+      return _regenerator["default"].wrap(function _callee2$(_context2) {
         while (1) {
           switch (_context2.prev = _context2.next) {
             case 0:
@@ -337,7 +337,7 @@ function (_PureComponent) {
               });
 
             case 19:
-              if (!((0, _typeof2.default)(file) !== 'object')) {
+              if (!((0, _typeof2["default"])(file) !== 'object')) {
                 _context2.next = 21;
                 break;
               }
@@ -363,7 +363,7 @@ function (_PureComponent) {
                 break;
               }
 
-              url = file.url, otherParams = (0, _objectWithoutProperties2.default)(file, ["url"]);
+              url = file.url, otherParams = (0, _objectWithoutProperties2["default"])(file, ["url"]);
               _fileUint8Array = (0, _utils.dataURItoUint8Array)(url);
               return _context2.abrupt("return", _objectSpread({
                 data: _fileUint8Array
@@ -382,16 +382,16 @@ function (_PureComponent) {
         }
       }, _callee2);
     })));
-    (0, _defineProperty2.default)((0, _assertThisInitialized2.default)(_this), "registerPage", function (pageIndex, ref) {
+    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "registerPage", function (pageIndex, ref) {
       _this.pages[pageIndex] = ref;
     });
-    (0, _defineProperty2.default)((0, _assertThisInitialized2.default)(_this), "unregisterPage", function (pageIndex) {
+    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "unregisterPage", function (pageIndex) {
       delete _this.pages[pageIndex];
     });
     return _this;
   }
 
-  (0, _createClass2.default)(Document, [{
+  (0, _createClass2["default"])(Document, [{
     key: "componentDidMount",
     value: function componentDidMount() {
       this.loadDocument();
@@ -419,7 +419,7 @@ function (_PureComponent) {
     key: "renderChildren",
     value: function renderChildren() {
       var children = this.props.children;
-      return _react.default.createElement(_DocumentContext.default.Provider, {
+      return _react["default"].createElement(_DocumentContext["default"].Provider, {
         value: this.childContext
       }, children);
     }
@@ -431,21 +431,21 @@ function (_PureComponent) {
 
       if (!file) {
         var noData = this.props.noData;
-        return _react.default.createElement(_Message.default, {
+        return _react["default"].createElement(_Message["default"], {
           type: "no-data"
         }, typeof noData === 'function' ? noData() : noData);
       }
 
       if (pdf === null) {
         var loading = this.props.loading;
-        return _react.default.createElement(_Message.default, {
+        return _react["default"].createElement(_Message["default"], {
           type: "loading"
         }, typeof loading === 'function' ? loading() : loading);
       }
 
       if (pdf === false) {
         var error = this.props.error;
-        return _react.default.createElement(_Message.default, {
+        return _react["default"].createElement(_Message["default"], {
           type: "error"
         }, typeof error === 'function' ? error() : error);
       }
@@ -458,8 +458,8 @@ function (_PureComponent) {
       var _this$props2 = this.props,
           className = _this$props2.className,
           inputRef = _this$props2.inputRef;
-      return _react.default.createElement("div", (0, _extends2.default)({
-        className: (0, _mergeClassNames.default)('react-pdf__Document', className),
+      return _react["default"].createElement("div", (0, _extends2["default"])({
+        className: (0, _mergeClassNames["default"])('react-pdf__Document', className),
         ref: inputRef
       }, this.eventProps), this.renderContent());
     }
@@ -488,7 +488,7 @@ function (_PureComponent) {
       var _this2 = this;
 
       // eslint-disable-next-line react/destructuring-assignment
-      return (0, _makeEventProps.default)(this.props, function () {
+      return (0, _makeEventProps["default"])(this.props, function () {
         return _this2.state.pdf;
       });
     }
@@ -500,14 +500,14 @@ function (_PureComponent) {
   return Document;
 }(_react.PureComponent);
 
-exports.default = Document;
+exports["default"] = Document;
 Document.defaultProps = {
   error: 'Failed to load PDF file.',
   loading: 'Loading PDF…',
   noData: 'No PDF file specified.',
   onPassword: function onPassword(callback, reason) {
     switch (reason) {
-      case _PasswordResponses.default.NEED_PASSWORD:
+      case _PasswordResponses["default"].NEED_PASSWORD:
         {
           // eslint-disable-next-line no-alert
           var password = prompt('Enter the password to open this PDF file.');
@@ -515,7 +515,7 @@ Document.defaultProps = {
           break;
         }
 
-      case _PasswordResponses.default.INCORRECT_PASSWORD:
+      case _PasswordResponses["default"].INCORRECT_PASSWORD:
         {
           // eslint-disable-next-line no-alert
           var _password = prompt('Invalid password. Please try again.');
@@ -529,19 +529,19 @@ Document.defaultProps = {
   }
 };
 Document.propTypes = _objectSpread({
-  children: _propTypes.default.node,
+  children: _propTypes["default"].node,
   className: _propTypes2.isClassName,
-  error: _propTypes.default.node,
+  error: _propTypes["default"].node,
   file: _utils.isFile,
-  inputRef: _propTypes.default.func,
-  loading: _propTypes.default.node,
-  noData: _propTypes.default.node,
-  onItemClick: _propTypes.default.func,
-  onLoadError: _propTypes.default.func,
-  onLoadProgress: _propTypes.default.func,
-  onLoadSuccess: _propTypes.default.func,
-  onPassword: _propTypes.default.func,
-  onSourceError: _propTypes.default.func,
-  onSourceSuccess: _propTypes.default.func,
-  rotate: _propTypes.default.number
+  inputRef: _propTypes["default"].func,
+  loading: _propTypes["default"].node,
+  noData: _propTypes["default"].node,
+  onItemClick: _propTypes["default"].func,
+  onLoadError: _propTypes["default"].func,
+  onLoadProgress: _propTypes["default"].func,
+  onLoadSuccess: _propTypes["default"].func,
+  onPassword: _propTypes["default"].func,
+  onSourceError: _propTypes["default"].func,
+  onSourceSuccess: _propTypes["default"].func,
+  rotate: _propTypes["default"].number
 }, _propTypes2.eventProps);

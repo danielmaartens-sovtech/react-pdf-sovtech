@@ -7,7 +7,7 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = exports.OutlineInternal = void 0;
+exports["default"] = exports.OutlineInternal = void 0;
 
 var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
 
@@ -51,35 +51,35 @@ var _propTypes2 = require("./shared/propTypes");
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { (0, _defineProperty2.default)(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { (0, _defineProperty2["default"])(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 var OutlineInternal =
 /*#__PURE__*/
 function (_PureComponent) {
-  (0, _inherits2.default)(OutlineInternal, _PureComponent);
+  (0, _inherits2["default"])(OutlineInternal, _PureComponent);
 
   function OutlineInternal() {
     var _getPrototypeOf2;
 
     var _this;
 
-    (0, _classCallCheck2.default)(this, OutlineInternal);
+    (0, _classCallCheck2["default"])(this, OutlineInternal);
 
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
     }
 
-    _this = (0, _possibleConstructorReturn2.default)(this, (_getPrototypeOf2 = (0, _getPrototypeOf3.default)(OutlineInternal)).call.apply(_getPrototypeOf2, [this].concat(args)));
-    (0, _defineProperty2.default)((0, _assertThisInitialized2.default)(_this), "state", {
+    _this = (0, _possibleConstructorReturn2["default"])(this, (_getPrototypeOf2 = (0, _getPrototypeOf3["default"])(OutlineInternal)).call.apply(_getPrototypeOf2, [this].concat(args)));
+    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "state", {
       outline: null
     });
-    (0, _defineProperty2.default)((0, _assertThisInitialized2.default)(_this), "loadOutline",
+    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "loadOutline",
     /*#__PURE__*/
-    (0, _asyncToGenerator2.default)(
+    (0, _asyncToGenerator2["default"])(
     /*#__PURE__*/
-    _regenerator.default.mark(function _callee() {
+    _regenerator["default"].mark(function _callee() {
       var pdf, cancellable, outline;
-      return _regenerator.default.wrap(function _callee$(_context) {
+      return _regenerator["default"].wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
@@ -96,7 +96,7 @@ function (_PureComponent) {
               });
 
               _context.prev = 2;
-              cancellable = (0, _makeCancellablePromise.default)(pdf.getOutline());
+              cancellable = (0, _makeCancellablePromise["default"])(pdf.getOutline());
               _this.runningTask = cancellable;
               _context.next = 7;
               return cancellable.promise;
@@ -124,12 +124,12 @@ function (_PureComponent) {
         }
       }, _callee, null, [[2, 11]]);
     })));
-    (0, _defineProperty2.default)((0, _assertThisInitialized2.default)(_this), "onLoadSuccess", function () {
+    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "onLoadSuccess", function () {
       var onLoadSuccess = _this.props.onLoadSuccess;
       var outline = _this.state.outline;
       (0, _utils.callIfDefined)(onLoadSuccess, outline);
     });
-    (0, _defineProperty2.default)((0, _assertThisInitialized2.default)(_this), "onLoadError", function (error) {
+    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "onLoadError", function (error) {
       _this.setState({
         outline: false
       });
@@ -138,7 +138,7 @@ function (_PureComponent) {
       var onLoadError = _this.props.onLoadError;
       (0, _utils.callIfDefined)(onLoadError, error);
     });
-    (0, _defineProperty2.default)((0, _assertThisInitialized2.default)(_this), "onItemClick", function (_ref2) {
+    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "onItemClick", function (_ref2) {
       var pageIndex = _ref2.pageIndex,
           pageNumber = _ref2.pageNumber;
       var onItemClick = _this.props.onItemClick;
@@ -150,7 +150,7 @@ function (_PureComponent) {
     return _this;
   }
 
-  (0, _createClass2.default)(OutlineInternal, [{
+  (0, _createClass2["default"])(OutlineInternal, [{
     key: "componentDidMount",
     value: function componentDidMount() {
       var pdf = this.props.pdf;
@@ -179,8 +179,8 @@ function (_PureComponent) {
     key: "renderOutline",
     value: function renderOutline() {
       var outline = this.state.outline;
-      return _react.default.createElement("ul", null, outline.map(function (item, itemIndex) {
-        return _react.default.createElement(_OutlineItem.default, {
+      return _react["default"].createElement("ul", null, outline.map(function (item, itemIndex) {
+        return _react["default"].createElement(_OutlineItem["default"], {
           key: typeof item.destination === 'string' ? item.destination : itemIndex,
           item: item
         });
@@ -199,10 +199,10 @@ function (_PureComponent) {
       var _this$props = this.props,
           className = _this$props.className,
           inputRef = _this$props.inputRef;
-      return _react.default.createElement("div", (0, _extends2.default)({
-        className: (0, _mergeClassNames.default)('react-pdf__Outline', className),
+      return _react["default"].createElement("div", (0, _extends2["default"])({
+        className: (0, _mergeClassNames["default"])('react-pdf__Outline', className),
         ref: inputRef
-      }, this.eventProps), _react.default.createElement(_OutlineContext.default.Provider, {
+      }, this.eventProps), _react["default"].createElement(_OutlineContext["default"].Provider, {
         value: this.childContext
       }, this.renderOutline()));
     }
@@ -219,7 +219,7 @@ function (_PureComponent) {
       var _this2 = this;
 
       // eslint-disable-next-line react/destructuring-assignment
-      return (0, _makeEventProps.default)(this.props, function () {
+      return (0, _makeEventProps["default"])(this.props, function () {
         return _this2.state.outline;
       });
     }
@@ -234,21 +234,21 @@ function (_PureComponent) {
 exports.OutlineInternal = OutlineInternal;
 OutlineInternal.propTypes = _objectSpread({
   className: _propTypes2.isClassName,
-  inputRef: _propTypes.default.func,
-  onItemClick: _propTypes.default.func,
-  onLoadError: _propTypes.default.func,
-  onLoadSuccess: _propTypes.default.func,
+  inputRef: _propTypes["default"].func,
+  onItemClick: _propTypes["default"].func,
+  onLoadError: _propTypes["default"].func,
+  onLoadSuccess: _propTypes["default"].func,
   pdf: _propTypes2.isPdf
 }, _propTypes2.eventProps);
 
 function Outline(props, ref) {
-  return _react.default.createElement(_DocumentContext.default.Consumer, null, function (context) {
-    return _react.default.createElement(OutlineInternal, (0, _extends2.default)({
+  return _react["default"].createElement(_DocumentContext["default"].Consumer, null, function (context) {
+    return _react["default"].createElement(OutlineInternal, (0, _extends2["default"])({
       ref: ref
     }, context, props));
   });
 }
 
-var _default = _react.default.forwardRef(Outline);
+var _default = _react["default"].forwardRef(Outline);
 
-exports.default = _default;
+exports["default"] = _default;

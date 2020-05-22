@@ -7,7 +7,7 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = TextLayerItem;
+exports["default"] = TextLayerItem;
 exports.TextLayerItemInternal = void 0;
 
 var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
@@ -43,22 +43,22 @@ var _propTypes2 = require("../shared/propTypes");
 var TextLayerItemInternal =
 /*#__PURE__*/
 function (_PureComponent) {
-  (0, _inherits2.default)(TextLayerItemInternal, _PureComponent);
+  (0, _inherits2["default"])(TextLayerItemInternal, _PureComponent);
 
   function TextLayerItemInternal() {
     var _getPrototypeOf2;
 
     var _this;
 
-    (0, _classCallCheck2.default)(this, TextLayerItemInternal);
+    (0, _classCallCheck2["default"])(this, TextLayerItemInternal);
 
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
     }
 
-    _this = (0, _possibleConstructorReturn2.default)(this, (_getPrototypeOf2 = (0, _getPrototypeOf3.default)(TextLayerItemInternal)).call.apply(_getPrototypeOf2, [this].concat(args)));
-    (0, _defineProperty2.default)((0, _assertThisInitialized2.default)(_this), "getElementWidth", function (element) {
-      var _assertThisInitialize = (0, _assertThisInitialized2.default)(_this),
+    _this = (0, _possibleConstructorReturn2["default"])(this, (_getPrototypeOf2 = (0, _getPrototypeOf3["default"])(TextLayerItemInternal)).call.apply(_getPrototypeOf2, [this].concat(args)));
+    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "getElementWidth", function (element) {
+      var _assertThisInitialize = (0, _assertThisInitialized2["default"])(_this),
           sideways = _assertThisInitialize.sideways;
 
       return element.getBoundingClientRect()[sideways ? 'height' : 'width'];
@@ -66,7 +66,7 @@ function (_PureComponent) {
     return _this;
   }
 
-  (0, _createClass2.default)(TextLayerItemInternal, [{
+  (0, _createClass2["default"])(TextLayerItemInternal, [{
     key: "componentDidMount",
     value: function componentDidMount() {
       this.alignTextItem();
@@ -79,11 +79,11 @@ function (_PureComponent) {
   }, {
     key: "getFontData",
     value: function () {
-      var _getFontData = (0, _asyncToGenerator2.default)(
+      var _getFontData = (0, _asyncToGenerator2["default"])(
       /*#__PURE__*/
-      _regenerator.default.mark(function _callee(fontName) {
+      _regenerator["default"].mark(function _callee(fontName) {
         var page, font;
-        return _regenerator.default.wrap(function _callee$(_context) {
+        return _regenerator["default"].wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
@@ -114,12 +114,12 @@ function (_PureComponent) {
   }, {
     key: "alignTextItem",
     value: function () {
-      var _alignTextItem = (0, _asyncToGenerator2.default)(
+      var _alignTextItem = (0, _asyncToGenerator2["default"])(
       /*#__PURE__*/
-      _regenerator.default.mark(function _callee2() {
+      _regenerator["default"].mark(function _callee2() {
         var element, _this$props, fontName, scale, width, fontData, fallbackFontName, targetWidth, actualWidth, transform, ascent;
 
-        return _regenerator.default.wrap(function _callee2$(_context2) {
+        return _regenerator["default"].wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
@@ -180,7 +180,7 @@ function (_PureComponent) {
           customTextRenderer = _this$props2.customTextRenderer,
           scale = _this$props2.scale,
           text = _this$props2.str;
-      return _react.default.createElement("span", {
+      return _react["default"].createElement("span", {
         ref: function ref(_ref) {
           _this2.item = _ref;
         },
@@ -238,7 +238,7 @@ function (_PureComponent) {
       var transform = this.props.transform;
       var defaultSideways = this.defaultSideways;
 
-      var _transform = (0, _slicedToArray2.default)(transform, 2),
+      var _transform = (0, _slicedToArray2["default"])(transform, 2),
           fontHeightPx = _transform[0],
           fontWidthPx = _transform[1];
 
@@ -251,7 +251,7 @@ function (_PureComponent) {
       var viewport = this.unrotatedViewport,
           defaultSideways = this.defaultSideways;
 
-      var _transform2 = (0, _slicedToArray2.default)(transform, 6),
+      var _transform2 = (0, _slicedToArray2["default"])(transform, 6),
 
       /* fontHeightPx */
 
@@ -261,7 +261,7 @@ function (_PureComponent) {
           x = _transform2[4],
           y = _transform2[5];
 
-      var _viewport$viewBox = (0, _slicedToArray2.default)(viewport.viewBox, 4),
+      var _viewport$viewBox = (0, _slicedToArray2["default"])(viewport.viewBox, 4),
 
       /* xMin */
       yMin = _viewport$viewBox[1],
@@ -278,7 +278,7 @@ function (_PureComponent) {
       var viewport = this.unrotatedViewport,
           defaultSideways = this.defaultSideways;
 
-      var _transform3 = (0, _slicedToArray2.default)(transform, 6),
+      var _transform3 = (0, _slicedToArray2["default"])(transform, 6),
 
       /* fontHeightPx */
 
@@ -290,7 +290,7 @@ function (_PureComponent) {
       x = _transform3[4],
           y = _transform3[5];
 
-      var _viewport$viewBox2 = (0, _slicedToArray2.default)(viewport.viewBox, 1),
+      var _viewport$viewBox2 = (0, _slicedToArray2["default"])(viewport.viewBox, 1),
           xMin = _viewport$viewBox2[0];
 
       return defaultSideways ? y - xMin : x - xMin;
@@ -301,20 +301,20 @@ function (_PureComponent) {
 
 exports.TextLayerItemInternal = TextLayerItemInternal;
 TextLayerItemInternal.propTypes = {
-  customTextRenderer: _propTypes.default.func,
-  fontName: _propTypes.default.string.isRequired,
-  itemIndex: _propTypes.default.number.isRequired,
+  customTextRenderer: _propTypes["default"].func,
+  fontName: _propTypes["default"].string.isRequired,
+  itemIndex: _propTypes["default"].number.isRequired,
   // eslint-disable-line react/no-unused-prop-types
   page: _propTypes2.isPage.isRequired,
   rotate: _propTypes2.isRotate,
-  scale: _propTypes.default.number,
-  str: _propTypes.default.string.isRequired,
-  transform: _propTypes.default.arrayOf(_propTypes.default.number).isRequired,
-  width: _propTypes.default.number.isRequired
+  scale: _propTypes["default"].number,
+  str: _propTypes["default"].string.isRequired,
+  transform: _propTypes["default"].arrayOf(_propTypes["default"].number).isRequired,
+  width: _propTypes["default"].number.isRequired
 };
 
 function TextLayerItem(props) {
-  return _react.default.createElement(_PageContext.default.Consumer, null, function (context) {
-    return _react.default.createElement(TextLayerItemInternal, (0, _extends2.default)({}, context, props));
+  return _react["default"].createElement(_PageContext["default"].Consumer, null, function (context) {
+    return _react["default"].createElement(TextLayerItemInternal, (0, _extends2["default"])({}, context, props));
   });
 }

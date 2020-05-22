@@ -7,7 +7,7 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = exports.OutlineItemInternal = void 0;
+exports["default"] = exports.OutlineItemInternal = void 0;
 
 var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
 
@@ -50,28 +50,28 @@ var _propTypes2 = require("./shared/propTypes");
 var OutlineItemInternal =
 /*#__PURE__*/
 function (_PureComponent) {
-  (0, _inherits2.default)(OutlineItemInternal, _PureComponent);
+  (0, _inherits2["default"])(OutlineItemInternal, _PureComponent);
 
   function OutlineItemInternal() {
     var _getPrototypeOf2;
 
     var _this;
 
-    (0, _classCallCheck2.default)(this, OutlineItemInternal);
+    (0, _classCallCheck2["default"])(this, OutlineItemInternal);
 
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
     }
 
-    _this = (0, _possibleConstructorReturn2.default)(this, (_getPrototypeOf2 = (0, _getPrototypeOf3.default)(OutlineItemInternal)).call.apply(_getPrototypeOf2, [this].concat(args)));
-    (0, _defineProperty2.default)((0, _assertThisInitialized2.default)(_this), "getDestination",
+    _this = (0, _possibleConstructorReturn2["default"])(this, (_getPrototypeOf2 = (0, _getPrototypeOf3["default"])(OutlineItemInternal)).call.apply(_getPrototypeOf2, [this].concat(args)));
+    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "getDestination",
     /*#__PURE__*/
-    (0, _asyncToGenerator2.default)(
+    (0, _asyncToGenerator2["default"])(
     /*#__PURE__*/
-    _regenerator.default.mark(function _callee() {
+    _regenerator["default"].mark(function _callee() {
       var _this$props, item, pdf;
 
-      return _regenerator.default.wrap(function _callee$(_context) {
+      return _regenerator["default"].wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
@@ -108,14 +108,14 @@ function (_PureComponent) {
         }
       }, _callee);
     })));
-    (0, _defineProperty2.default)((0, _assertThisInitialized2.default)(_this), "getPageIndex",
+    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "getPageIndex",
     /*#__PURE__*/
-    (0, _asyncToGenerator2.default)(
+    (0, _asyncToGenerator2["default"])(
     /*#__PURE__*/
-    _regenerator.default.mark(function _callee2() {
+    _regenerator["default"].mark(function _callee2() {
       var pdf, destination, _destination, ref;
 
-      return _regenerator.default.wrap(function _callee2$(_context2) {
+      return _regenerator["default"].wrap(function _callee2$(_context2) {
         while (1) {
           switch (_context2.prev = _context2.next) {
             case 0:
@@ -137,9 +137,9 @@ function (_PureComponent) {
                 break;
               }
 
-              _destination = (0, _slicedToArray2.default)(destination, 1), ref = _destination[0];
+              _destination = (0, _slicedToArray2["default"])(destination, 1), ref = _destination[0];
               _context2.next = 9;
-              return pdf.getPageIndex(new _Ref.default(ref));
+              return pdf.getPageIndex(new _Ref["default"](ref));
 
             case 9:
               _this.pageIndex = _context2.sent;
@@ -154,12 +154,12 @@ function (_PureComponent) {
         }
       }, _callee2);
     })));
-    (0, _defineProperty2.default)((0, _assertThisInitialized2.default)(_this), "getPageNumber",
+    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "getPageNumber",
     /*#__PURE__*/
-    (0, _asyncToGenerator2.default)(
+    (0, _asyncToGenerator2["default"])(
     /*#__PURE__*/
-    _regenerator.default.mark(function _callee3() {
-      return _regenerator.default.wrap(function _callee3$(_context3) {
+    _regenerator["default"].mark(function _callee3() {
+      return _regenerator["default"].wrap(function _callee3$(_context3) {
         while (1) {
           switch (_context3.prev = _context3.next) {
             case 0:
@@ -185,14 +185,14 @@ function (_PureComponent) {
         }
       }, _callee3);
     })));
-    (0, _defineProperty2.default)((0, _assertThisInitialized2.default)(_this), "onClick",
+    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "onClick",
     /*#__PURE__*/
     function () {
-      var _ref4 = (0, _asyncToGenerator2.default)(
+      var _ref4 = (0, _asyncToGenerator2["default"])(
       /*#__PURE__*/
-      _regenerator.default.mark(function _callee4(event) {
+      _regenerator["default"].mark(function _callee4(event) {
         var onClick, pageIndex, pageNumber;
-        return _regenerator.default.wrap(function _callee4$(_context4) {
+        return _regenerator["default"].wrap(function _callee4$(_context4) {
           while (1) {
             switch (_context4.prev = _context4.next) {
               case 0:
@@ -228,20 +228,20 @@ function (_PureComponent) {
     return _this;
   }
 
-  (0, _createClass2.default)(OutlineItemInternal, [{
+  (0, _createClass2["default"])(OutlineItemInternal, [{
     key: "renderSubitems",
     value: function renderSubitems() {
       var _this$props2 = this.props,
           item = _this$props2.item,
-          otherProps = (0, _objectWithoutProperties2.default)(_this$props2, ["item"]);
+          otherProps = (0, _objectWithoutProperties2["default"])(_this$props2, ["item"]);
 
       if (!item.items || !item.items.length) {
         return null;
       }
 
       var subitems = item.items;
-      return _react.default.createElement("ul", null, subitems.map(function (subitem, subitemIndex) {
-        return _react.default.createElement(OutlineItemInternal, (0, _extends2.default)({
+      return _react["default"].createElement("ul", null, subitems.map(function (subitem, subitemIndex) {
+        return _react["default"].createElement(OutlineItemInternal, (0, _extends2["default"])({
           key: typeof subitem.destination === 'string' ? subitem.destination : subitemIndex,
           item: subitem
         }, otherProps));
@@ -253,7 +253,7 @@ function (_PureComponent) {
       var item = this.props.item;
       /* eslint-disable jsx-a11y/anchor-is-valid */
 
-      return _react.default.createElement("li", null, _react.default.createElement("a", {
+      return _react["default"].createElement("li", null, _react["default"].createElement("a", {
         href: "#",
         onClick: this.onClick
       }, item.title), this.renderSubitems());
@@ -264,28 +264,28 @@ function (_PureComponent) {
 
 exports.OutlineItemInternal = OutlineItemInternal;
 
-var isDestination = _propTypes.default.oneOfType([_propTypes.default.string, _propTypes.default.arrayOf(_propTypes.default.any)]);
+var isDestination = _propTypes["default"].oneOfType([_propTypes["default"].string, _propTypes["default"].arrayOf(_propTypes["default"].any)]);
 
 OutlineItemInternal.propTypes = {
-  item: _propTypes.default.shape({
+  item: _propTypes["default"].shape({
     dest: isDestination,
-    items: _propTypes.default.arrayOf(_propTypes.default.shape({
+    items: _propTypes["default"].arrayOf(_propTypes["default"].shape({
       dest: isDestination,
-      title: _propTypes.default.string
+      title: _propTypes["default"].string
     })),
-    title: _propTypes.default.string
+    title: _propTypes["default"].string
   }).isRequired,
-  onClick: _propTypes.default.func,
+  onClick: _propTypes["default"].func,
   pdf: _propTypes2.isPdf.isRequired
 };
 
 var OutlineItem = function OutlineItem(props) {
-  return _react.default.createElement(_DocumentContext.default.Consumer, null, function (documentContext) {
-    return _react.default.createElement(_OutlineContext.default.Consumer, null, function (outlineContext) {
-      return _react.default.createElement(OutlineItemInternal, (0, _extends2.default)({}, documentContext, outlineContext, props));
+  return _react["default"].createElement(_DocumentContext["default"].Consumer, null, function (documentContext) {
+    return _react["default"].createElement(_OutlineContext["default"].Consumer, null, function (outlineContext) {
+      return _react["default"].createElement(OutlineItemInternal, (0, _extends2["default"])({}, documentContext, outlineContext, props));
     });
   });
 };
 
 var _default = OutlineItem;
-exports.default = _default;
+exports["default"] = _default;

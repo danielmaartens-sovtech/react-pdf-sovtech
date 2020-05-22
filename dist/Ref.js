@@ -5,7 +5,7 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 
 var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
 
@@ -17,12 +17,12 @@ function () {
   function Ref(_ref) {
     var num = _ref.num,
         gen = _ref.gen;
-    (0, _classCallCheck2.default)(this, Ref);
+    (0, _classCallCheck2["default"])(this, Ref);
     this.num = num;
     this.gen = gen;
   }
 
-  (0, _createClass2.default)(Ref, [{
+  (0, _createClass2["default"])(Ref, [{
     key: "toString",
     value: function toString() {
       var str = "".concat(this.num, "R");
@@ -37,4 +37,4 @@ function () {
   return Ref;
 }();
 
-exports.default = Ref;
+exports["default"] = Ref;

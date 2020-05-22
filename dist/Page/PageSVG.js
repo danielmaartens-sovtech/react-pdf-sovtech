@@ -7,7 +7,7 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = PageSVG;
+exports["default"] = PageSVG;
 exports.PageSVGInternal = void 0;
 
 var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
@@ -41,24 +41,24 @@ var _propTypes2 = require("../shared/propTypes");
 var PageSVGInternal =
 /*#__PURE__*/
 function (_PureComponent) {
-  (0, _inherits2.default)(PageSVGInternal, _PureComponent);
+  (0, _inherits2["default"])(PageSVGInternal, _PureComponent);
 
   function PageSVGInternal() {
     var _getPrototypeOf2;
 
     var _this;
 
-    (0, _classCallCheck2.default)(this, PageSVGInternal);
+    (0, _classCallCheck2["default"])(this, PageSVGInternal);
 
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
     }
 
-    _this = (0, _possibleConstructorReturn2.default)(this, (_getPrototypeOf2 = (0, _getPrototypeOf3.default)(PageSVGInternal)).call.apply(_getPrototypeOf2, [this].concat(args)));
-    (0, _defineProperty2.default)((0, _assertThisInitialized2.default)(_this), "state", {
+    _this = (0, _possibleConstructorReturn2["default"])(this, (_getPrototypeOf2 = (0, _getPrototypeOf3["default"])(PageSVGInternal)).call.apply(_getPrototypeOf2, [this].concat(args)));
+    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "state", {
       svg: null
     });
-    (0, _defineProperty2.default)((0, _assertThisInitialized2.default)(_this), "onRenderSuccess", function () {
+    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "onRenderSuccess", function () {
       _this.renderer = null;
       var _this$props = _this.props,
           onRenderSuccess = _this$props.onRenderSuccess,
@@ -66,7 +66,7 @@ function (_PureComponent) {
           scale = _this$props.scale;
       (0, _utils.callIfDefined)(onRenderSuccess, (0, _utils.makePageCallback)(page, scale));
     });
-    (0, _defineProperty2.default)((0, _assertThisInitialized2.default)(_this), "onRenderError", function (error) {
+    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "onRenderError", function (error) {
       if ((0, _utils.isCancelException)(error)) {
         return;
       }
@@ -75,19 +75,19 @@ function (_PureComponent) {
       var onRenderError = _this.props.onRenderError;
       (0, _utils.callIfDefined)(onRenderError, error);
     });
-    (0, _defineProperty2.default)((0, _assertThisInitialized2.default)(_this), "renderSVG", function () {
+    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "renderSVG", function () {
       var page = _this.props.page;
       _this.renderer = page.getOperatorList();
       return _this.renderer.then(function (operatorList) {
-        var svgGfx = new _pdfjsDist.default.SVGGraphics(page.commonObjs, page.objs);
+        var svgGfx = new _pdfjsDist["default"].SVGGraphics(page.commonObjs, page.objs);
         _this.renderer = svgGfx.getSVG(operatorList, _this.viewport).then(function (svg) {
           _this.setState({
             svg: svg
           }, _this.onRenderSuccess);
-        }).catch(_this.onRenderError);
-      }).catch(_this.onRenderError);
+        })["catch"](_this.onRenderError);
+      })["catch"](_this.onRenderError);
     });
-    (0, _defineProperty2.default)((0, _assertThisInitialized2.default)(_this), "drawPageOnContainer", function (element) {
+    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "drawPageOnContainer", function (element) {
       var svg = _this.state.svg;
 
       if (!element || !svg) {
@@ -108,7 +108,7 @@ function (_PureComponent) {
     return _this;
   }
 
-  (0, _createClass2.default)(PageSVGInternal, [{
+  (0, _createClass2["default"])(PageSVGInternal, [{
     key: "componentDidMount",
     value: function componentDidMount() {
       this.renderSVG();
@@ -125,7 +125,7 @@ function (_PureComponent) {
       var _this$viewport2 = this.viewport,
           width = _this$viewport2.width,
           height = _this$viewport2.height;
-      return _react.default.createElement("div", {
+      return _react["default"].createElement("div", {
         className: "react-pdf__Page__svg" // Note: This cannot be shortened, as we need this function to be called with each render.
         ,
         ref: function ref(_ref) {
@@ -159,15 +159,15 @@ function (_PureComponent) {
 
 exports.PageSVGInternal = PageSVGInternal;
 PageSVGInternal.propTypes = {
-  onRenderError: _propTypes.default.func,
-  onRenderSuccess: _propTypes.default.func,
+  onRenderError: _propTypes["default"].func,
+  onRenderSuccess: _propTypes["default"].func,
   page: _propTypes2.isPage.isRequired,
   rotate: _propTypes2.isRotate,
-  scale: _propTypes.default.number
+  scale: _propTypes["default"].number
 };
 
 function PageSVG(props) {
-  return _react.default.createElement(_PageContext.default.Consumer, null, function (context) {
-    return _react.default.createElement(PageSVGInternal, (0, _extends2.default)({}, context, props));
+  return _react["default"].createElement(_PageContext["default"].Consumer, null, function (context) {
+    return _react["default"].createElement(PageSVGInternal, (0, _extends2["default"])({}, context, props));
   });
 }

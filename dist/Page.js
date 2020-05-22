@@ -7,7 +7,7 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = exports.PageInternal = void 0;
+exports["default"] = exports.PageInternal = void 0;
 
 var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
 
@@ -59,31 +59,31 @@ var _propTypes2 = require("./shared/propTypes");
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { (0, _defineProperty2.default)(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { (0, _defineProperty2["default"])(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 var defaultScale = 1.0;
 
 var PageInternal =
 /*#__PURE__*/
 function (_PureComponent) {
-  (0, _inherits2.default)(PageInternal, _PureComponent);
+  (0, _inherits2["default"])(PageInternal, _PureComponent);
 
   function PageInternal() {
     var _getPrototypeOf2;
 
     var _this;
 
-    (0, _classCallCheck2.default)(this, PageInternal);
+    (0, _classCallCheck2["default"])(this, PageInternal);
 
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
     }
 
-    _this = (0, _possibleConstructorReturn2.default)(this, (_getPrototypeOf2 = (0, _getPrototypeOf3.default)(PageInternal)).call.apply(_getPrototypeOf2, [this].concat(args)));
-    (0, _defineProperty2.default)((0, _assertThisInitialized2.default)(_this), "state", {
+    _this = (0, _possibleConstructorReturn2["default"])(this, (_getPrototypeOf2 = (0, _getPrototypeOf3["default"])(PageInternal)).call.apply(_getPrototypeOf2, [this].concat(args)));
+    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "state", {
       page: null
     });
-    (0, _defineProperty2.default)((0, _assertThisInitialized2.default)(_this), "onLoadSuccess", function () {
+    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "onLoadSuccess", function () {
       var _this$props = _this.props,
           onLoadSuccess = _this$props.onLoadSuccess,
           registerPage = _this$props.registerPage;
@@ -91,18 +91,18 @@ function (_PureComponent) {
       (0, _utils.callIfDefined)(onLoadSuccess, (0, _utils.makePageCallback)(page, _this.scale));
       (0, _utils.callIfDefined)(registerPage, _this.pageIndex, _this.ref);
     });
-    (0, _defineProperty2.default)((0, _assertThisInitialized2.default)(_this), "onLoadError", function (error) {
+    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "onLoadError", function (error) {
       (0, _utils.errorOnDev)(error);
       var onLoadError = _this.props.onLoadError;
       (0, _utils.callIfDefined)(onLoadError, error);
     });
-    (0, _defineProperty2.default)((0, _assertThisInitialized2.default)(_this), "loadPage",
+    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "loadPage",
     /*#__PURE__*/
-    (0, _asyncToGenerator2.default)(
+    (0, _asyncToGenerator2["default"])(
     /*#__PURE__*/
-    _regenerator.default.mark(function _callee() {
+    _regenerator["default"].mark(function _callee() {
       var pdf, pageNumber, cancellable, page;
-      return _regenerator.default.wrap(function _callee$(_context) {
+      return _regenerator["default"].wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
@@ -128,7 +128,7 @@ function (_PureComponent) {
               });
 
               _context.prev = 5;
-              cancellable = (0, _makeCancellablePromise.default)(pdf.getPage(pageNumber));
+              cancellable = (0, _makeCancellablePromise["default"])(pdf.getPage(pageNumber));
               _this.runningTask = cancellable;
               _context.next = 10;
               return cancellable.promise;
@@ -163,7 +163,7 @@ function (_PureComponent) {
     return _this;
   }
 
-  (0, _createClass2.default)(PageInternal, [{
+  (0, _createClass2["default"])(PageInternal, [{
     key: "componentDidMount",
     value: function componentDidMount() {
       var pdf = this.props.pdf;
@@ -232,13 +232,13 @@ function (_PureComponent) {
           return null;
 
         case 'svg':
-          return _react.default.createElement(_PageSVG.default, {
+          return _react["default"].createElement(_PageSVG["default"], {
             key: "".concat(this.pageKeyNoScale, "_svg")
           });
 
         case 'canvas':
         default:
-          return _react.default.createElement(_PageCanvas.default, {
+          return _react["default"].createElement(_PageCanvas["default"], {
             key: "".concat(this.pageKey, "_canvas")
           });
       }
@@ -252,7 +252,7 @@ function (_PureComponent) {
         return null;
       }
 
-      return _react.default.createElement(_TextLayer.default, {
+      return _react["default"].createElement(_TextLayer["default"], {
         key: "".concat(this.pageKey, "_text")
       });
     }
@@ -270,7 +270,7 @@ function (_PureComponent) {
        */
 
 
-      return _react.default.createElement(_AnnotationLayer.default, {
+      return _react["default"].createElement(_AnnotationLayer["default"], {
         key: "".concat(this.pageKey, "_annotations")
       });
     }
@@ -278,7 +278,7 @@ function (_PureComponent) {
     key: "renderChildren",
     value: function renderChildren() {
       var children = this.props.children;
-      return _react.default.createElement(_PageContext.default.Provider, {
+      return _react["default"].createElement(_PageContext["default"].Provider, {
         value: this.childContext
       }, this.renderMainLayer(), this.renderTextLayer(), this.renderAnnotationLayer(), children);
     }
@@ -291,21 +291,21 @@ function (_PureComponent) {
 
       if (!pageNumber) {
         var noData = this.props.noData;
-        return _react.default.createElement(_Message.default, {
+        return _react["default"].createElement(_Message["default"], {
           type: "no-data"
         }, typeof noData === 'function' ? noData() : noData);
       }
 
       if (pdf === null || page === null) {
         var loading = this.props.loading;
-        return _react.default.createElement(_Message.default, {
+        return _react["default"].createElement(_Message["default"], {
           type: "loading"
         }, typeof loading === 'function' ? loading() : loading);
       }
 
       if (pdf === false || page === false) {
         var error = this.props.error;
-        return _react.default.createElement(_Message.default, {
+        return _react["default"].createElement(_Message["default"], {
           type: "error"
         }, typeof error === 'function' ? error() : error);
       }
@@ -319,8 +319,8 @@ function (_PureComponent) {
 
       var pageNumber = this.pageNumber;
       var className = this.props.className;
-      return _react.default.createElement("div", (0, _extends2.default)({
-        className: (0, _mergeClassNames.default)('react-pdf__Page', className),
+      return _react["default"].createElement("div", (0, _extends2["default"])({
+        className: (0, _mergeClassNames["default"])('react-pdf__Page', className),
         "data-page-number": pageNumber,
         ref: function ref(_ref2) {
           var inputRef = _this2.props.inputRef;
@@ -437,7 +437,7 @@ function (_PureComponent) {
     get: function get() {
       var _this3 = this;
 
-      return (0, _makeEventProps.default)(this.props, function () {
+      return (0, _makeEventProps["default"])(this.props, function () {
         var page = _this3.state.page;
 
         if (!page) {
@@ -475,39 +475,39 @@ PageInternal.defaultProps = {
   scale: defaultScale
 };
 PageInternal.propTypes = _objectSpread({
-  children: _propTypes.default.node,
+  children: _propTypes["default"].node,
   className: _propTypes2.isClassName,
-  customTextRenderer: _propTypes.default.func,
-  error: _propTypes.default.node,
-  height: _propTypes.default.number,
-  inputRef: _propTypes.default.func,
-  loading: _propTypes.default.node,
-  noData: _propTypes.default.node,
-  onGetTextError: _propTypes.default.func,
-  onGetTextSuccess: _propTypes.default.func,
-  onLoadError: _propTypes.default.func,
-  onLoadSuccess: _propTypes.default.func,
-  onRenderError: _propTypes.default.func,
-  onRenderSuccess: _propTypes.default.func,
+  customTextRenderer: _propTypes["default"].func,
+  error: _propTypes["default"].node,
+  height: _propTypes["default"].number,
+  inputRef: _propTypes["default"].func,
+  loading: _propTypes["default"].node,
+  noData: _propTypes["default"].node,
+  onGetTextError: _propTypes["default"].func,
+  onGetTextSuccess: _propTypes["default"].func,
+  onLoadError: _propTypes["default"].func,
+  onLoadSuccess: _propTypes["default"].func,
+  onRenderError: _propTypes["default"].func,
+  onRenderSuccess: _propTypes["default"].func,
   pageIndex: _propTypes2.isPageIndex,
   pageNumber: _propTypes2.isPageNumber,
   pdf: _propTypes2.isPdf,
-  registerPage: _propTypes.default.func,
-  renderAnnotationLayer: _propTypes.default.bool,
-  renderInteractiveForms: _propTypes.default.bool,
+  registerPage: _propTypes["default"].func,
+  renderAnnotationLayer: _propTypes["default"].bool,
+  renderInteractiveForms: _propTypes["default"].bool,
   renderMode: _propTypes2.isRenderMode,
-  renderTextLayer: _propTypes.default.bool,
+  renderTextLayer: _propTypes["default"].bool,
   rotate: _propTypes2.isRotate,
-  scale: _propTypes.default.number,
-  unregisterPage: _propTypes.default.func,
-  width: _propTypes.default.number
+  scale: _propTypes["default"].number,
+  unregisterPage: _propTypes["default"].func,
+  width: _propTypes["default"].number
 }, _propTypes2.eventProps); // forwardRef render functions do not support propTypes
 
 /* eslint-disable react/prop-types */
 
 function Page(props, ref) {
-  return _react.default.createElement(_DocumentContext.default.Consumer, null, function (context) {
-    return _react.default.createElement(PageInternal, (0, _extends2.default)({
+  return _react["default"].createElement(_DocumentContext["default"].Consumer, null, function (context) {
+    return _react["default"].createElement(PageInternal, (0, _extends2["default"])({
       ref: ref
     }, context, props, {
       // For backwards compatibility
@@ -516,6 +516,6 @@ function Page(props, ref) {
   });
 }
 
-var _default = _react.default.forwardRef(Page);
+var _default = _react["default"].forwardRef(Page);
 
-exports.default = _default;
+exports["default"] = _default;

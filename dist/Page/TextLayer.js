@@ -7,7 +7,7 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = TextLayer;
+exports["default"] = TextLayer;
 exports.TextLayerInternal = void 0;
 
 var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
@@ -47,37 +47,37 @@ var _propTypes2 = require("../shared/propTypes");
 var TextLayerInternal =
 /*#__PURE__*/
 function (_PureComponent) {
-  (0, _inherits2.default)(TextLayerInternal, _PureComponent);
+  (0, _inherits2["default"])(TextLayerInternal, _PureComponent);
 
   function TextLayerInternal() {
     var _getPrototypeOf2;
 
     var _this;
 
-    (0, _classCallCheck2.default)(this, TextLayerInternal);
+    (0, _classCallCheck2["default"])(this, TextLayerInternal);
 
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
     }
 
-    _this = (0, _possibleConstructorReturn2.default)(this, (_getPrototypeOf2 = (0, _getPrototypeOf3.default)(TextLayerInternal)).call.apply(_getPrototypeOf2, [this].concat(args)));
-    (0, _defineProperty2.default)((0, _assertThisInitialized2.default)(_this), "state", {
+    _this = (0, _possibleConstructorReturn2["default"])(this, (_getPrototypeOf2 = (0, _getPrototypeOf3["default"])(TextLayerInternal)).call.apply(_getPrototypeOf2, [this].concat(args)));
+    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "state", {
       textItems: null
     });
-    (0, _defineProperty2.default)((0, _assertThisInitialized2.default)(_this), "loadTextItems",
+    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "loadTextItems",
     /*#__PURE__*/
-    (0, _asyncToGenerator2.default)(
+    (0, _asyncToGenerator2["default"])(
     /*#__PURE__*/
-    _regenerator.default.mark(function _callee() {
+    _regenerator["default"].mark(function _callee() {
       var page, cancellable, _ref2, textItems;
 
-      return _regenerator.default.wrap(function _callee$(_context) {
+      return _regenerator["default"].wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
               page = _this.props.page;
               _context.prev = 1;
-              cancellable = (0, _makeCancellablePromise.default)(page.getTextContent());
+              cancellable = (0, _makeCancellablePromise["default"])(page.getTextContent());
               _this.runningTask = cancellable;
               _context.next = 6;
               return cancellable.promise;
@@ -106,12 +106,12 @@ function (_PureComponent) {
         }
       }, _callee, null, [[1, 11]]);
     })));
-    (0, _defineProperty2.default)((0, _assertThisInitialized2.default)(_this), "onLoadSuccess", function () {
+    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "onLoadSuccess", function () {
       var onGetTextSuccess = _this.props.onGetTextSuccess;
       var textItems = _this.state.textItems;
       (0, _utils.callIfDefined)(onGetTextSuccess, textItems);
     });
-    (0, _defineProperty2.default)((0, _assertThisInitialized2.default)(_this), "onLoadError", function (error) {
+    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "onLoadError", function (error) {
       _this.setState({
         textItems: false
       });
@@ -123,7 +123,7 @@ function (_PureComponent) {
     return _this;
   }
 
-  (0, _createClass2.default)(TextLayerInternal, [{
+  (0, _createClass2["default"])(TextLayerInternal, [{
     key: "componentDidMount",
     value: function componentDidMount() {
       var page = this.props.page;
@@ -158,8 +158,8 @@ function (_PureComponent) {
       }
 
       return textItems.map(function (textItem, itemIndex) {
-        return _react.default.createElement(_TextLayerItem.default // eslint-disable-next-line react/no-array-index-key
-        , (0, _extends2.default)({
+        return _react["default"].createElement(_TextLayerItem["default"] // eslint-disable-next-line react/no-array-index-key
+        , (0, _extends2["default"])({
           key: itemIndex,
           itemIndex: itemIndex
         }, textItem));
@@ -170,7 +170,7 @@ function (_PureComponent) {
     value: function render() {
       var viewport = this.unrotatedViewport,
           rotate = this.rotate;
-      return _react.default.createElement("div", {
+      return _react["default"].createElement("div", {
         className: "react-pdf__Page__textContent",
         style: {
           position: 'absolute',
@@ -213,15 +213,15 @@ function (_PureComponent) {
 
 exports.TextLayerInternal = TextLayerInternal;
 TextLayerInternal.propTypes = {
-  onGetTextError: _propTypes.default.func,
-  onGetTextSuccess: _propTypes.default.func,
+  onGetTextError: _propTypes["default"].func,
+  onGetTextSuccess: _propTypes["default"].func,
   page: _propTypes2.isPage.isRequired,
   rotate: _propTypes2.isRotate,
-  scale: _propTypes.default.number
+  scale: _propTypes["default"].number
 };
 
 function TextLayer(props) {
-  return _react.default.createElement(_PageContext.default.Consumer, null, function (context) {
-    return _react.default.createElement(TextLayerInternal, (0, _extends2.default)({}, context, props));
+  return _react["default"].createElement(_PageContext["default"].Consumer, null, function (context) {
+    return _react["default"].createElement(TextLayerInternal, (0, _extends2["default"])({}, context, props));
   });
 }

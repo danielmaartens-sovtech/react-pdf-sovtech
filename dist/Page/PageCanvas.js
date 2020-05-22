@@ -7,7 +7,7 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = PageCanvas;
+exports["default"] = PageCanvas;
 exports.PageCanvasInternal = void 0;
 
 var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
@@ -39,21 +39,21 @@ var _propTypes2 = require("../shared/propTypes");
 var PageCanvasInternal =
 /*#__PURE__*/
 function (_PureComponent) {
-  (0, _inherits2.default)(PageCanvasInternal, _PureComponent);
+  (0, _inherits2["default"])(PageCanvasInternal, _PureComponent);
 
   function PageCanvasInternal() {
     var _getPrototypeOf2;
 
     var _this;
 
-    (0, _classCallCheck2.default)(this, PageCanvasInternal);
+    (0, _classCallCheck2["default"])(this, PageCanvasInternal);
 
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
     }
 
-    _this = (0, _possibleConstructorReturn2.default)(this, (_getPrototypeOf2 = (0, _getPrototypeOf3.default)(PageCanvasInternal)).call.apply(_getPrototypeOf2, [this].concat(args)));
-    (0, _defineProperty2.default)((0, _assertThisInitialized2.default)(_this), "onRenderSuccess", function () {
+    _this = (0, _possibleConstructorReturn2["default"])(this, (_getPrototypeOf2 = (0, _getPrototypeOf3["default"])(PageCanvasInternal)).call.apply(_getPrototypeOf2, [this].concat(args)));
+    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "onRenderSuccess", function () {
       _this.renderer = null;
       var _this$props = _this.props,
           onRenderSuccess = _this$props.onRenderSuccess,
@@ -61,7 +61,7 @@ function (_PureComponent) {
           scale = _this$props.scale;
       (0, _utils.callIfDefined)(onRenderSuccess, (0, _utils.makePageCallback)(page, scale));
     });
-    (0, _defineProperty2.default)((0, _assertThisInitialized2.default)(_this), "onRenderError", function (error) {
+    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "onRenderError", function (error) {
       if ((0, _utils.isCancelException)(error)) {
         return;
       }
@@ -70,15 +70,15 @@ function (_PureComponent) {
       var onRenderError = _this.props.onRenderError;
       (0, _utils.callIfDefined)(onRenderError, error);
     });
-    (0, _defineProperty2.default)((0, _assertThisInitialized2.default)(_this), "drawPageOnCanvas", function () {
-      var _assertThisInitialize = (0, _assertThisInitialized2.default)(_this),
+    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "drawPageOnCanvas", function () {
+      var _assertThisInitialize = (0, _assertThisInitialized2["default"])(_this),
           canvas = _assertThisInitialize.canvasLayer;
 
       if (!canvas) {
         return null;
       }
 
-      var _assertThisInitialize2 = (0, _assertThisInitialized2.default)(_this),
+      var _assertThisInitialize2 = (0, _assertThisInitialized2["default"])(_this),
           renderViewport = _assertThisInitialize2.renderViewport,
           viewport = _assertThisInitialize2.viewport;
 
@@ -101,12 +101,12 @@ function (_PureComponent) {
       _this.cancelRenderingTask();
 
       _this.renderer = page.render(renderContext);
-      return _this.renderer.promise.then(_this.onRenderSuccess).catch(_this.onRenderError);
+      return _this.renderer.promise.then(_this.onRenderSuccess)["catch"](_this.onRenderError);
     });
     return _this;
   }
 
-  (0, _createClass2.default)(PageCanvasInternal, [{
+  (0, _createClass2["default"])(PageCanvasInternal, [{
     key: "componentDidMount",
     value: function componentDidMount() {
       this.drawPageOnCanvas();
@@ -158,7 +158,7 @@ function (_PureComponent) {
     value: function render() {
       var _this2 = this;
 
-      return _react.default.createElement("canvas", {
+      return _react["default"].createElement("canvas", {
         className: "react-pdf__Page__canvas",
         ref: function ref(_ref) {
           _this2.canvasLayer = _ref;
@@ -200,16 +200,16 @@ function (_PureComponent) {
 
 exports.PageCanvasInternal = PageCanvasInternal;
 PageCanvasInternal.propTypes = {
-  onRenderError: _propTypes.default.func,
-  onRenderSuccess: _propTypes.default.func,
+  onRenderError: _propTypes["default"].func,
+  onRenderSuccess: _propTypes["default"].func,
   page: _propTypes2.isPage.isRequired,
-  renderInteractiveForms: _propTypes.default.bool,
+  renderInteractiveForms: _propTypes["default"].bool,
   rotate: _propTypes2.isRotate,
-  scale: _propTypes.default.number
+  scale: _propTypes["default"].number
 };
 
 function PageCanvas(props) {
-  return _react.default.createElement(_PageContext.default.Consumer, null, function (context) {
-    return _react.default.createElement(PageCanvasInternal, (0, _extends2.default)({}, context, props));
+  return _react["default"].createElement(_PageContext["default"].Consumer, null, function (context) {
+    return _react["default"].createElement(PageCanvasInternal, (0, _extends2["default"])({}, context, props));
   });
 }
